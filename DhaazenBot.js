@@ -7,8 +7,8 @@ const request = require('request').defaults({ encoding: null })
 // CommandClient
 var bot = new Eris.CommandClient(config.token, {}, {
   description: 'Experimental bot not working very well',
-  owner: 'KhaaZ#2030',
-  prefix: ['k', '@mention '],
+  owner: 'ĐΣΔŦђツ#8708',
+  prefix: ['n!', '@mention '],
   defaultHelpCommand: false,
   autoReconnect: true,
   ignoreBots: true,
@@ -21,7 +21,7 @@ bot.on('ready', () => { // When the bot is ready
 })
 
 bot.on('ready', () => { // When the bot is ready
-  bot.editStatus(null, { name: 'bullied by Khaaz | khelp', type: 0 })
+  bot.editStatus(null, { name: 'bullied by Death | n!help', type: 0 })
 })
 
 bot.on('ready', () => {
@@ -65,7 +65,7 @@ bot.on('warn', (msg) => {
 // CORE STUFF - Global var
 //
 var version = 'Embot V 1.x Dev; private release for Khaaz | Dhaazen: Alpha 0.5 Dev'
-var dprefix = `k`
+var dprefix = `n!`
 //
 // CORE STUFF END
 
@@ -98,7 +98,7 @@ bot.registerCommand('help', (msg, args) => {
                   icon_url: bot.user.dynamicAvatarURL('png')
                 },
                 footer: {
-                  text: 'Dhaazen'
+                  text: 'Death'
                 },
                 fields: [
                   {
@@ -132,7 +132,7 @@ bot.registerCommand('help', (msg, args) => {
                   icon_url: bot.user.dynamicAvatarURL('png')
                 },
                 footer: {
-                  text: 'Dhaazen'
+                  text: 'Death'
                 },
                 fields: [
                   {
@@ -166,7 +166,7 @@ bot.registerCommand('help', (msg, args) => {
                         icon_url: bot.user.dynamicAvatarURL('png')
                       },
                       footer: {
-                        text: 'Dhaazen'
+                        text: 'Death'
                       },
                       fields: [
                         {
@@ -206,7 +206,7 @@ bot.registerCommand('help', (msg, args) => {
                     icon_url: bot.user.dynamicAvatarURL('png')
                   },
                   footer: {
-                    text: 'Dhaazen'
+                    text: 'Death'
                   },
                   fields: [
                     {
@@ -245,7 +245,7 @@ bot.registerCommand('help', (msg, args) => {
                         icon_url: bot.user.dynamicAvatarURL('png')
                       },
                       footer: {
-                        text: 'Dhaazen'
+                        text: 'Death'
                       },
                       fields: [
                         {
@@ -280,7 +280,7 @@ bot.registerCommand('help', (msg, args) => {
                     icon_url: bot.user.dynamicAvatarURL('png')
                   },
                   footer: {
-                    text: 'Dhaazen'
+                    text: 'Death'
                   },
                   fields: [
                     {
@@ -322,8 +322,8 @@ bot.registerCommand('help', (msg, args) => {
         },
         fields: [
           {
-            name: 'Dhaazen',
-            value: `Author: \`KhaaZ#2030\`.\nVersion:\`${version}\`.\nMore info: \`${dprefix}info\`.`
+            name: 'Death',
+            value: `Author: \`ĐΣΔŦђツ#8708\`.\nVersion:\`${version}\`.\nMore info: \`${dprefix}info\`.`
           },
           {
             name: 'Commands',
@@ -331,7 +331,7 @@ bot.registerCommand('help', (msg, args) => {
           },
           {
             name: 'Prefix',
-            value: `\`${dprefix}\`\n\`@Dhaazen#6393 \``
+            value: `\`${dprefix}\`\n\`@ĐΣΔŦђツ#4202 \``
           }
         ]
       }
@@ -353,7 +353,7 @@ bot.registerCommandAlias('halp', 'help') // Alias !halp to !help
 //
 // Restart command
 bot.registerCommand('restart', (msg, args) => {
-  if (msg.author.id === '179908288337412096') { // Owner ID
+  if (msg.author.id === '343930211877781506') { // Owner ID
     msg.delete()
     bot.createMessage(msg.channel.id, {
       embed: {
@@ -374,7 +374,7 @@ bot.registerCommand('restart', (msg, args) => {
       }
     })
     setTimeout(function () {
-      exec('pm2 restart DhaazenBot', (error, stdout, stderr) => {
+      exec('pm2 restart DeathBot', (error, stdout, stderr) => {
         if (error) {
           console.error(`exec error: ${error}`)
           return
@@ -388,7 +388,7 @@ bot.registerCommand('restart', (msg, args) => {
           color: 3066993, // green
           footer: {
             icon_url: bot.user.avatarURL,
-            text: 'Dhaazen'
+            text: 'Death'
           },
           description: 'Restarted!'
         }
@@ -402,13 +402,13 @@ bot.registerCommand('restart', (msg, args) => {
   fullDescription: 'Restart the bot',
   usage: `${dprefix}restart`,
   requirements: {
-    'userIDs': '179908288337412096' // Owner private
+    'userIDs': '343930211877781506' // Owner private
   },
   permissionMessage: ':no_entry_sign: You dont have permission to do that.'
 })
 // Stop command
 bot.registerCommand('botstop', (msg, args) => {
-  if (msg.author.id === '179908288337412096') { // Owner ID
+  if (msg.author.id === '343930211877781506') { // Owner ID
     msg.delete()
     bot.disconnect()
     bot.createMessage(msg.channel.id, {
@@ -423,7 +423,7 @@ bot.registerCommand('botstop', (msg, args) => {
       }, 3000)
     })
     setTimeout(function () {
-      exec('pm2 stop DhaazenBot', (error, stdout, stderr) => {
+      exec('pm2 stop DeathBot', (error, stdout, stderr) => {
         if (error) {
           console.error(`exec error: ${error}`)
           return
@@ -458,7 +458,7 @@ bot.registerCommand('botstop', (msg, args) => {
   fullDescription: 'Stop the bot',
   usage: `${dprefix}botstop`,
   requirements: {
-    'userIDs': '179908288337412096' // Owner private
+    'userIDs': '343930211877781506' // Owner private
   },
   permissionMessage: ':no_entry_sign: You dont have permission to do that.'
 })
@@ -529,7 +529,7 @@ bot.on('guildCreate', (guild) => { // Log create guild
       },
       footer: {
         icon_url: bot.user.avatarURL,
-        text: 'Dhaazen'
+        text: 'Death'
       },
       description: `Dhaazen was added to: ${guild.name}`,
       fields: [
@@ -595,9 +595,9 @@ bot.on('guildDelete', (guild) => { // Log delete guild
       },
       footer: {
         icon_url: bot.user.avatarURL,
-        text: 'Dhaazen'
+        text: 'Death'
       },
-      description: `Dhaazen was removed from: ${guild.name}`,
+      description: `Death was removed from: ${guild.name}`,
       fields: [
         {
           name: 'ID:',
@@ -661,7 +661,7 @@ bot.on('guildAvailable', (guild) => { // Log Available guild
       },
       footer: {
         icon_url: bot.user.avatarURL,
-        text: 'Dhaazen'
+        text: 'Death'
       },
       description: `New guild available: ${guild.name}`,
       fields: [
@@ -727,7 +727,7 @@ bot.on('guildUnavailable', (guild) => { // Log Unavailable guild
       },
       footer: {
         icon_url: bot.user.avatarURL,
-        text: 'Dhaazen'
+        text: 'Death'
       },
       description: `New guild unavailable: ${guild.name}`,
       fields: [
@@ -872,7 +872,7 @@ bot.registerCommand('info', (msg, args) => {
     embed: {
       color: 1752220, // aqua
       author: {
-        name: 'Dhaazen',
+        name: 'Death',
         icon_url: bot.user.avatarURL
       },
       thumbnail: {
@@ -926,12 +926,12 @@ bot.registerCommand('info', (msg, args) => {
         },
         {
           name: 'Invite',
-          value: '[Add me](https://discordapp.com/oauth2/authorize?client_id=360859616558579713&scope=bot&permissions=201714753)',
+          value: '[Add me](https://discordapp.com/api/oauth2/authorize?client_id=384275810242265090&permissions=8&scope=bot)',
           inline: true
         },
         {
           name: 'Discord Server',
-          value: '[Join now](https://discord.gg/JtbEDuf)',
+          value: '[Join now](https://discord.gg/4twrC9h)',
           inline: true
         }
       ]
@@ -972,10 +972,10 @@ bot.registerCommand('support', (msg, args) => { // Info command 2.0
       timestamp: new Date(),
       footer: {
         icon_url: bot.user.avatarURL,
-        text: 'Dhaazen'
+        text: 'Death'
       },
       author: {
-        name: 'Dhaazen',
+        name: 'Death',
         icon_url: bot.user.avatarURL
       },
       description: 'Need help? Feel free to join our support server!',
@@ -1002,12 +1002,12 @@ bot.registerCommand('invite', (msg, args) => {
     embed: {
       color: 1752220, // aqua
       author: {
-        name: 'Dhaazen',
+        name: 'Death',
         icon_url: bot.user.avatarURL
       },
       footer: {
         icon_url: bot.user.avatarURL,
-        text: 'Support server: https://discord.gg/JtbEDuf'
+        text: 'Support server: https://discord.gg/4twrC9h'
       },
       fields: [
         {
